@@ -1,13 +1,12 @@
-Create SAML assertions.
+Create SAML2.0 assertions with saml2 as the xml namespace prefix inside a SAML response object
 
-NOTE: currently supports SAML 1.1 tokens
 
 [![Build Status](https://travis-ci.org/auth0/node-saml.png)](https://travis-ci.org/auth0/node-saml)
 
 ### Usage
 
 ```js
-var saml11 = require('saml').Saml11;
+var saml20 = require('saml').Saml20;
 
 var options = {
   cert: fs.readFileSync(__dirname + '/test-auth0.pem'),
@@ -23,7 +22,7 @@ var options = {
   sessionIndex: '_faed468a-15a0-4668-aed6-3d9c478cc8fa'
 };
 
-var signedAssertion = saml11.create(options);
+var signedAssertion = saml20.create(options);
 ```
 
 Everything except the cert and key is optional.
